@@ -1,30 +1,57 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import List from './components/List.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="container">
+    <List
+      :data="[
+        // type1
+        {
+          name: 'Anna',
+          year: 10,
+          class: 'A',
+        },
+        {
+          name: 'Mark',
+          year: 10,
+          class: 'M',
+        },
+
+        // type2
+        {
+          title: 'Javascrit Info',
+          category: 'book',
+          rating: 10,
+        },
+        {
+          title: 'Fantasy',
+          category: 'movie',
+          rating: 5,
+        },
+
+        // type3
+        {
+          winner: 'Amy',
+          rank: 1,
+        },
+        {
+          winner: 'Bob',
+          rank: 2,
+        },
+        {
+          winner: 'Jack',
+          rank: 3,
+        },
+      ]"
+    />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 </style>
