@@ -4,8 +4,9 @@ import Type2, { Type2Props } from './Type2.vue'
 import Type3, { Type3Props } from './Type3.vue'
 
 type Item = Type1Props | Type2Props | Type3Props
+type Data = Type1Props[] | Type2Props[] | Type3Props[]
 
-defineProps<{ data: Item[] }>()
+defineProps<{ data: Data }>()
 
 const type1Keys: (keyof Type1Props)[] = ['name', 'year', 'class']
 const type2Keys: (keyof Type2Props)[] = ['title', 'category', 'rating']
@@ -21,19 +22,40 @@ const getComponent = (item: Item) => {
   if (isType3(item)) return Type3
   return null
 }
+
+const getClass = (data: Data) => {
+  if (isType1(data[0]) || isType2(data[0])) return 'light'
+  return 'dark'
+}
 </script>
 
 <template>
-  <component v-for="(item, index) in data" :key="index" :is="getComponent(item)" :...="item" />
+  <div :class="getClass(data)">
+    <h2 class="title" v-if="isType3(data[0])">Top {{ data.length }} Winners</h2>
+    <component v-for="(item, index) in data" :key="index" :is="getComponent(item)" :...="item" />
+  </div>
 </template>
 
 <style scoped lang="scss">
+.title {
+  color: white;
+  text-align: left;
+  margin-left: -8px;
+}
+.container {
+  gap: 8px;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+}
 .light {
-  background-color: white;
+  @extend .container;
   color: black;
+  background-color: #ebebeb;
 }
 
 .dark {
-  background-color: black;
+  @extend .container;
+  background-color: #1e1e1e;
 }
 </style>

@@ -4,6 +4,7 @@ import List from './components/List.vue'
 
 <template>
   <div class="container">
+    <div>Type1 👇</div>
     <List
       :data="[
         // type1
@@ -17,7 +18,11 @@ import List from './components/List.vue'
           year: 10,
           class: 'M',
         },
-
+      ]"
+    />
+    <div>Type2 👇</div>
+    <List
+      :data="[
         // type2
         {
           title: 'Javascrit Info',
@@ -29,7 +34,11 @@ import List from './components/List.vue'
           category: 'movie',
           rating: 5,
         },
-
+      ]"
+    />
+    <div>Type3 👇</div>
+    <List
+      :data="[
         // type3
         {
           winner: 'Amy',

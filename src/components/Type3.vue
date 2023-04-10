@@ -18,7 +18,7 @@ defineProps<Type3Props>()
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 8px 16px;
+  padding: 4px 16px;
   gap: 8px;
   width: 600px;
   background-color: white;
