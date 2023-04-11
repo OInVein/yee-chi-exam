@@ -4,7 +4,7 @@ import List from './components/List.vue'
 
 <template>
   <div class="container">
-    <div>Type1 👇</div>
+    <div class="demo-title">Type 1 👇</div>
     <List
       :data="[
         // type1
@@ -20,7 +20,7 @@ import List from './components/List.vue'
         },
       ]"
     />
-    <div>Type2 👇</div>
+    <div class="demo-title">Type 2 👇</div>
     <List
       :data="[
         // type2
@@ -36,7 +36,7 @@ import List from './components/List.vue'
         },
       ]"
     />
-    <div>Type3 👇</div>
+    <div class="demo-title">Type 3 👇</div>
     <List
       :data="[
         // type3
@@ -58,6 +58,12 @@ import List from './components/List.vue'
 </template>
 
 <style scoped>
+.demo-title {
+  font-size: 1.3em;
+  display: flex;
+  font-weight: bold;
+  padding: 8px 0;
+}
 .container {
   display: flex;
   flex-direction: column;

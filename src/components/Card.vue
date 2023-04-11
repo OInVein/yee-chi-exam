@@ -9,10 +9,6 @@ withDefaults(defineProps<{ type3: boolean }>(), {
 </template>
 
 <style scoped>
-.type3 {
-  padding: 4px 16px;
-  font-weight: 500;
-}
 .card {
   display: flex;
   flex-direction: column;
@@ -23,5 +19,10 @@ withDefaults(defineProps<{ type3: boolean }>(), {
   background-color: white;
   color: black;
   border-radius: 8px;
+}
+
+.card.type3 {
+  padding: 4px 16px;
+  font-weight: 500;
 }
 </style>
