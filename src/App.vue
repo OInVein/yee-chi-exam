@@ -7,7 +7,6 @@ import List from './components/List.vue'
     <div class="demo-title">Type 1 👇</div>
     <List
       :data="[
-        // type1
         {
           name: 'Anna',
           year: 10,
@@ -23,7 +22,6 @@ import List from './components/List.vue'
     <div class="demo-title">Type 2 👇</div>
     <List
       :data="[
-        // type2
         {
           title: 'Javascrit Info',
           category: 'book',
@@ -39,7 +37,6 @@ import List from './components/List.vue'
     <div class="demo-title">Type 3 👇</div>
     <List
       :data="[
-        // type3
         {
           winner: 'Amy',
           rank: 1,
