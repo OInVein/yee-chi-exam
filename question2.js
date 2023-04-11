@@ -15,7 +15,7 @@ const recipes2 = [
 
 function solution(receipes = []) {
   const recipesMaps = receipes.map(([dish, ...receipe]) => [dish, [...receipe]])
-  const ingredients = receipes.map(([, ...receipe]) => receipe).flat()
+  const ingredients = receipes.flatMap(([, ...receipe]) => receipe)
   const repeatsIngredients = [
     ...new Set(ingredients.filter((ingredient, index) => ingredients.indexOf(ingredient) !== index)),
   ].sort()
