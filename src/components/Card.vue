@@ -1,10 +1,18 @@
+<script setup lang="ts">
+withDefaults(defineProps<{ type3: boolean }>(), {
+  type3: false,
+})
+</script>
+
 <template>
-  <div class="card"><slot></slot></div>
+  <div class="card" :class="{ type3 }"><slot></slot></div>
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped>
+.type3 {
+  padding: 4px 16px;
+  font-weight: 500;
+}
 .card {
   display: flex;
   flex-direction: column;
