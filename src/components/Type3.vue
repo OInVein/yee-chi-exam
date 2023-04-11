@@ -10,9 +10,7 @@ defineProps<Type3Props>()
 </script>
 
 <template>
-  <!-- <div class="card"> -->
   <Card type3>
     <div>{{ rank }} {{ winner }}</div>
   </Card>
-  <!-- </div> -->
 </template>
